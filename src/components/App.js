@@ -10,5 +10,5 @@ export const App = () => {
         localStorage.getItem("hiveLogger_customer") ? <Dashboard /> : <Auth toggle={toggle} />
     )
 }
-
+debugger
 

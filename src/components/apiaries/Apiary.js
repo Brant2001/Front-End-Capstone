@@ -5,5 +5,6 @@ import React from "react"
 export const Apiary = ({apiary}) => (
     <section className="apiary">
         <h3 className="apiary__name">{apiary.name}</h3>
+        <div className="apiary__loc">Location: {apiary.location}</div>
     </section>
 )

@@ -20,19 +20,19 @@ export const ApiaryList = () => {
     const toggle = () => setModal(!modal)
 
     const currentUserId = localStorage.getItem('hiveLogger_user')
-    
-// const matchingUser = users.find(user => user.id === api.userId)
+    const matchingUserApiaries = apiaries.filter(userApiary => userApiary.userId === parseInt(currentUserId))
+
     return (
         <>
             <h2>Apiaries</h2>
 
             <div className="apiaries">
                 {
-                    apiaries.map(api => {
-                        const matchingUser = apiaries.filter(userApiary => userApiary.userId === parseInt(currentUserId))
+                    matchingUserApiaries.map(api => {
+                        
                         
                         return <Apiary key={api.id} apiary={api}
-                            user={matchingUser}/>
+                            user={matchingUserApiaries}/>
                     })
                 }
             </div>

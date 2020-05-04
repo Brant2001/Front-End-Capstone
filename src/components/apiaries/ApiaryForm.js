@@ -54,13 +54,14 @@ export default props => {
             <button type="submit"
                 onClick={
                     evt => {
-                        evt.preventDefault() // Prevent browser from submitting the form
+                        // Prevent browser from submitting the form
+                        evt.preventDefault() 
                         // create the apiary function goes here
                         constructNewApiary()
                     }
                 }
                 className="btn btn-primary">
-                Admit Apiary
+                Create Apiary
             </button>
         </form>
     )

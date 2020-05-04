@@ -6,7 +6,6 @@
 import React, { useContext, useState } from "react"
 import { ApiaryContext } from "./ApiaryProvider"
 import { Modal, ModalBody, ModalHeader, Button} from "reactstrap"
-import { UserContext } from "../users/UserProvider"
 import { Apiary } from "./Apiary"
 import ApiaryForm from "./ApiaryForm"
 import "./Apiary.css"
@@ -14,7 +13,6 @@ import "./Apiary.css"
 // This function declares variables and uses them to map through the apiaries and find the ones that 
 export const ApiaryList = () => {
     const { apiaries } = useContext(ApiaryContext)
-    const { users } = useContext(UserContext)
     
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)

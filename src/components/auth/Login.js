@@ -2,7 +2,7 @@ import React, { useRef } from "react"
 import "./auth.css"
 
 
-export const Login = props => {
+export const Login = (props) => {
     const email = useRef()
     const password = useRef()
     const userName = useRef()

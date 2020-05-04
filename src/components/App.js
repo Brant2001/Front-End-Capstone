@@ -7,8 +7,8 @@ export const App = () => {
     const toggle = () => update(!check)
 
     return (
-        localStorage.getItem("hiveLogger_customer") ? <Dashboard /> : <Auth toggle={toggle} />
+        localStorage.getItem("hiveLogger_user") ? <Dashboard /> : <Auth toggle={toggle} />
     )
 }
-debugger
+
 

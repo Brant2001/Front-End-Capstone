@@ -17,9 +17,9 @@ export const EditApiaryForm = ({ apiary, customer, toggleEdit }) => {
         newApiary[event.target.name] = event.target.value
         setApiary(newApiary)
     }
+    const location = useRef()
 
     const editApiary = () => {
-        const location = useRef()
 
         if (location === "") {
             window.alert("Please select a location")
@@ -48,35 +48,11 @@ export const EditApiaryForm = ({ apiary, customer, toggleEdit }) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="breed">Apiary breed: </label>
-                    <input type="text" name="breed" required className="form-control"
-                        placeholder="Apiary breed"
-                        defaultValue={apiary.breed}
+                    <label htmlFor="location">Apiary location: </label>
+                    <input type="text" name="location" required className="form-control"
+                        placeholder="Apiary location"
+                        defaultValue={apiary.location}
                         onChange={handleControlledInputChange}
-                    />
-                </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="locationId">Location: </label>
-                    <select name="locationId" className="form-control"
-                        defaultValue={apiary.locationId}
-                        onChange={handleControlledInputChange}>
-
-                        <option value="0">Select a location</option>
-                        {locations.map(e => (
-                            <option key={e.id} value={e.id}>
-                                {e.name}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="customer">Customer:</label>
-                    <input type="text" name="customer" disabled className="form-control"
-                        defaultValue={customer.name}
                     />
                 </div>
             </fieldset>

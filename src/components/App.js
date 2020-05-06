@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Dashboard } from "./Dashboard"
+import { DashboardCtrlr } from "./DashBoardCtrlr"
 import { Auth } from "./auth/Auth"
 
 export const App = () => {
@@ -7,7 +7,7 @@ export const App = () => {
     const toggle = () => update(!check)
 
     return (
-        localStorage.getItem("hiveLogger_user") ? <Dashboard /> : <Auth toggle={toggle} />
+        localStorage.getItem("hiveLogger_user") ? <DashboardCtrlr /> : <Auth toggle={toggle} />
     )
 }
 

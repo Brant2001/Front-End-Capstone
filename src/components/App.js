@@ -1,6 +1,7 @@
 import React, { useState } from "react"
-import { DashboardCtrlr } from "./DashBoardCtrlr"
+import { DashboardCtrlr } from "./dashboards/DashboardCtrlr"
 import { Auth } from "./auth/Auth"
+
 
 export const App = () => {
     const [check, update] = useState(false)

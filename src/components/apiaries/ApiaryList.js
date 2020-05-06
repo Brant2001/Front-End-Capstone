@@ -11,7 +11,7 @@ import ApiaryForm from "./ApiaryForm"
 import "./Apiary.css"
 
 // This function declares variables and uses them to map through the apiaries and find the ones that 
-export const ApiaryList = () => {
+export const ApiaryList = ({view}) => {
     const { apiaries } = useContext(ApiaryContext)
     
     const [modal, setModal] = useState(false)
@@ -29,7 +29,7 @@ export const ApiaryList = () => {
                     matchingUserApiaries.map(api => {
                         
                         
-                        return <Apiary key={api.id} apiary={api}
+                        return <Apiary view={view} key={api.id} apiary={api}
                             user={matchingUserApiaries}/>
                     })
                 }

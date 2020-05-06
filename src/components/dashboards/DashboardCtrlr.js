@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react"
-import { ApiaryDashboard } from "../apiaries/ApiaryDashboard"
-import "./Layout.css"
-import "./Kennel.css"
+import { ApiaryDashboard } from "./ApiaryDashboard"
+import { Dashboard } from "./Dashboard"
+import "../App.css"
 
-export const Dashboard = () => {
+export const DashboardCtrlr = () => {
     const [activeList, setActiveList] = useState("homePage")
     const [components, setComponents] = useState()
 
     // Components needed to display Apiaries
     const showHomePage = () => (
-            <Dashboard />
+            <Dashboard view={setActiveList}/>
     )
     // Components needed to display Apiaries
     const showApiaries = () => (

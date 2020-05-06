@@ -10,7 +10,11 @@ import { Hive } from "./Hive"
 import HiveForm from "./HiveForm"
 import "./Hive.css"
 
-// This function declares variables and uses them to map through the hives and find the ones that 
+/* 
+    This function declares variables and uses them to map 
+    through the hives and find the ones that match the current
+    user and use Hive.js to render them as DOM elements.
+*/
 export const HiveList = () => {
     const { hives } = useContext(HiveContext)
     
@@ -34,7 +38,7 @@ export const HiveList = () => {
                     })
                 }
             </div>
-
+            {/* This function also provides an add button that will open a hive form */}
             <Button onClick={toggle}>Add Hive</Button>
 
             <Modal isOpen={modal} toggle={toggle}>

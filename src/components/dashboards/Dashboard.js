@@ -1,21 +1,19 @@
 import React from "react"
-import { ApiaryProvider } from "./apiaries/ApiaryProvider"
-import { ApiaryList } from "./apiaries/ApiaryList"
-import "./App.css"
-import { UserProvider } from "./users/UserProvider"
+import { ApiaryProvider } from "../apiaries/ApiaryProvider"
+import { ApiaryList } from "../apiaries/ApiaryList"
+import { UserProvider } from "../users/UserProvider"
+import "../App.css"
 
-export const Dashboard = () => {
-    return (
-        <div className="mainContainer">
-            <div className="dataContainer">
+export const Dashboard = ({view}) => {
+    return (    
+            <div className="apiaryContainer">
                 <h1>HiveLogger</h1>
                 <small>An app worth buzzing about.</small>
                     <UserProvider>
                         <ApiaryProvider>
-                            <ApiaryList />
+                            <ApiaryList view={view}/>
                         </ApiaryProvider>
                     </UserProvider>
             </div>
-        </div>
     )
 }

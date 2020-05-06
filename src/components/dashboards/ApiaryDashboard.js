@@ -1,21 +1,18 @@
-import React, { useContext } from "react"
-import { ApiaryContext, ApiaryProvider } from "../apiaries/ApiaryProvider"
+import React from "react"
 import { HiveProvider } from "../hives/HiveProvider"
 import { HiveList } from "../hives/HiveList"
 import "../App.css"
 
 
-export const ApiaryDashboard = () => {
-    const { apiaries } = useContext(ApiaryContext)
+export const ApiaryDashboard = ( { currentApiary } ) => {
+    const apiary = currentApiary
     return (
             <div className="hiveContainer">
-                <h1>{apiaries.name}</h1>
-                <small>{apiaries.location}</small>
-                    <ApiaryProvider>
-                        <HiveProvider>
-                            <HiveList />
-                        </HiveProvider>
-                    </ApiaryProvider>
+                <h1>{apiary.name}</h1>
+                <small>{apiary.location}</small>
+                    <HiveProvider>
+                        <HiveList currentApiary={currentApiary}/>
+                    </HiveProvider>
             </div>
     )
 }

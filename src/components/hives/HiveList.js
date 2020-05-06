@@ -7,7 +7,7 @@ import React, { useContext, useState } from "react"
 import { HiveContext } from "./HiveProvider"
 import { Modal, ModalBody, ModalHeader, Button} from "reactstrap"
 import { Hive } from "./Hive"
-import HiveForm from "./HiveForm"
+// import HiveForm from "./HiveForm"
 import "./Hive.css"
 
 /* 
@@ -15,26 +15,25 @@ import "./Hive.css"
     through the hives and find the ones that match the current
     user and use Hive.js to render them as DOM elements.
 */
-export const HiveList = () => {
+export const HiveList = ( { currentApiary } ) => {
     const { hives } = useContext(HiveContext)
-    
+    const apiary = currentApiary
+
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
 
-    const currentUserId = localStorage.getItem('hiveLogger_user')
-    const matchingUserHives = hives.filter(userHive => userHive.userId === parseInt(currentUserId))
-
+    const apiaryHives = hives.filter(hive => apiary.id === hive.apiaryId)
     return (
         <>
             <h2>Hives</h2>
 
             <div className="hives">
                 {
-                    matchingUserHives.map(api => {
+                    apiaryHives.map(hv => {
                         
                         
-                        return <Hive key={api.id} hive={api}
-                            user={matchingUserHives}/>
+                        return <Hive key={hv.id} hive={hv}
+                            user={apiaryHives}/>
                     })
                 }
             </div>
@@ -46,7 +45,7 @@ export const HiveList = () => {
                     Add Hive
                 </ModalHeader>
                 <ModalBody>
-                    <HiveForm toggler={toggle}/>
+                    {/* <HiveForm toggler={toggle}/> */}
                 </ModalBody>
             </Modal>
         </>

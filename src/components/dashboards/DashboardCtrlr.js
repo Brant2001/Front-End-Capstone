@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from "react"
 import { ApiaryDashboard } from "./ApiaryDashboard"
 import { Dashboard } from "./Dashboard"
+import { ApiaryProvider } from "../apiaries/ApiaryProvider"
 import "../App.css"
 
 export const DashboardCtrlr = () => {
-    const [activeList, setActiveList] = useState("homePage")
+    const [activeList, setActiveList] = useState({
+        list: "homePage",
+        currentApiary: {}
+    })
     const [components, setComponents] = useState()
 
     // Components needed to display Apiaries
     const showHomePage = () => (
-            <Dashboard view={setActiveList}/>
+            <Dashboard setActiveList={setActiveList} />
     )
     // Components needed to display Apiaries
     const showApiaries = () => (
-            <ApiaryDashboard />
+        <ApiaryProvider>
+            <ApiaryDashboard currentApiary={activeList.currentApiary} />
+        </ApiaryProvider>
     )
 
     /*
@@ -21,10 +27,10 @@ export const DashboardCtrlr = () => {
         based on the state of the `activeList` variable.
     */
     useEffect(() => {
-        if (activeList === "homePage") {
+        if (activeList.list === "homePage") {
             setComponents(showHomePage)
         } 
-        else if  (activeList === "apiaries") {
+        else if  (activeList.list === "apiaries") {
             setComponents(showApiaries)
         }
     }, [activeList])

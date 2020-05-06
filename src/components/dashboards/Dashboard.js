@@ -4,14 +4,14 @@ import { ApiaryList } from "../apiaries/ApiaryList"
 import { UserProvider } from "../users/UserProvider"
 import "../App.css"
 
-export const Dashboard = ({view}) => {
+export const Dashboard = ({ setActiveList}) => {
     return (    
             <div className="apiaryContainer">
                 <h1>HiveLogger</h1>
                 <small>An app worth buzzing about.</small>
                     <UserProvider>
                         <ApiaryProvider>
-                            <ApiaryList view={view}/>
+                            <ApiaryList setActiveList={setActiveList}/>
                         </ApiaryProvider>
                     </UserProvider>
             </div>

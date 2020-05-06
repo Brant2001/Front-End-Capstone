@@ -1,52 +1,55 @@
 import React, { useContext, useRef } from "react"
-import { ApiaryContext } from "./ApiaryProvider"
+import { HiveContext } from "./HiveProvider"
 
 export default props => {
-    const { addApiary } = useContext(ApiaryContext)
+    const { addHive } = useContext(HiveContext)
 
     const name = useRef()
-    const location = useRef()
+    const beeTypeId = useRef()
+    const hiveTypeId = useRef()
+    const queenAge = useRef()
 
-    const constructNewApiary = () => {
-        const userId = parseInt(localStorage.getItem("hiveLogger_user"))
-        // create a new apiary object  
-        const newApiaryObj = {
+    const constructNewHive = () => {
+
+        // create a new hive object  
+        const newHiveObj = {
             name: name.current.value,
-            location: location.current.value,
-            userId: userId
+            queenAge: queenAge.current.value,
+            beeTypeId: beeTypeId,
+            hiveTypeId: hiveTypeId
         }
-        console.log(newApiaryObj)
+        console.log(newHiveObj)
         // and save it to the API.
-        addApiary(newApiaryObj).then(props.toggler)
+        addHive(newHiveObj).then(props.toggler)
     }
 
     return (
-        <form className="apiaryForm">
+        <form className="hiveForm">
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="apiaryName">Name of Apiary: </label>
+                    <label htmlFor="hiveName">Name of Hive: </label>
                     <input
                         type="text"
-                        id="apiaryName"
+                        id="hiveName"
                         ref={name}
                         required
                         autoFocus
                         className="form-control"
-                        placeholder="apiary name"
+                        placeholder="hive name"
                     />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="apiaryLocation">Location of Apiary: </label>
+                    <label htmlFor="hiveLocation">Location of hive: </label>
                     <input
                         type="text"
-                        id="apiaryLocation"
+                        id="hiveLocation"
                         ref={location}
                         required
                         autoFocus
                         className="form-control"
-                        placeholder="apiary location"
+                        placeholder="hive location"
                     />
                 </div>
             </fieldset>
@@ -55,8 +58,8 @@ export default props => {
                     evt => {
                         // Prevent browser from submitting the form
                         evt.preventDefault() 
-                        // create the apiary function goes here
-                        constructNewApiary()
+                        // create the hive function goes here
+                        constructNewHive()
                     }
                 }
                 className="btn btn-primary">

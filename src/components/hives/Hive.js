@@ -9,11 +9,17 @@ import { HiveContext } from "./HiveProvider"
 
 // This function will allow HiveList to pass hive data 
 // through it to create HTML/JSX representations of a hive
-export const Hive = ({hive}) => {
+export const Hive = ( { hive, setActiveList } ) => {
     const { deleteHive } = useContext(HiveContext)
     
     return (
-        <a href="fakeHref" >
+        <Button color="outline-secondary" size="lg" block 
+        onClick={() => {
+            setActiveList({
+                list: "logs",
+                currentHive: hive,
+            })
+        }}>
             <section className="hive">
                 <h3 className="hive__name">{hive.name}</h3>
                 <div className="hive__bee">Type of Bee: {hive.beeTypeId}</div>
@@ -23,6 +29,6 @@ export const Hive = ({hive}) => {
                     deleteHive(hive.id)
                 }}>Delete</Button>
             </section>
-        </a>
+        </Button>
     )
 }

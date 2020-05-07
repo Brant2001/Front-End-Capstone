@@ -15,7 +15,7 @@ import "./Hive.css"
     through the hives and find the ones that match the current
     user and use Hive.js to render them as DOM elements.
 */
-export const HiveList = ( { currentApiary } ) => {
+export const HiveList = ( { currentApiary, setActiveList } ) => {
     const { hives } = useContext(HiveContext)
     const apiary = currentApiary
 
@@ -30,10 +30,7 @@ export const HiveList = ( { currentApiary } ) => {
             <div className="hives">
                 {
                     apiaryHives.map(hv => {
-                        
-                        
-                        return <Hive key={hv.id} hive={hv}
-                            user={apiaryHives}/>
+                        return <Hive setActiveList={setActiveList} key={hv.id} hive={hv}/>
                     })
                 }
             </div>

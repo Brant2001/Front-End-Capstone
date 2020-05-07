@@ -1,18 +1,19 @@
 import React from "react"
-import { HiveProvider } from "../hives/HiveProvider"
-import { HiveList } from "../hives/HiveList"
+import { ApiaryProvider } from "../apiaries/ApiaryProvider"
+import { ApiaryList } from "../apiaries/ApiaryList"
+import { UserProvider } from "../users/UserProvider"
 import "../App.css"
 
-
-export const ApiaryDashboard = ( { currentApiary } ) => {
-    const apiary = currentApiary
-    return (
-            <div className="hiveContainer">
-                <h1>{apiary.name}</h1>
-                <small>{apiary.location}</small>
-                    <HiveProvider>
-                        <HiveList currentApiary={currentApiary}/>
-                    </HiveProvider>
+export const ApiaryDashboard = ( { setActiveList} ) => {
+    return (    
+            <div className="apiaryContainer">
+                <h1>HiveLogger</h1>
+                <small>An app worth buzzing about.</small>
+                    <UserProvider>
+                        <ApiaryProvider>
+                            <ApiaryList setActiveList={setActiveList}/>
+                        </ApiaryProvider>
+                    </UserProvider>
             </div>
     )
 }

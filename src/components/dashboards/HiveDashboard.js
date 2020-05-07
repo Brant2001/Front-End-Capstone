@@ -2,6 +2,8 @@ import React from "react"
 import { HiveProvider } from "../hives/HiveProvider"
 import { HiveList } from "../hives/HiveList"
 import "../App.css"
+import { BeeTypeProvider } from "../types/BeeTypeProvider"
+import { HiveTypeProvider } from "../types/HiveTypeProvider"
 
 
 export const HiveDashboard = ( { currentApiary, setActiveList} ) => {
@@ -10,9 +12,13 @@ export const HiveDashboard = ( { currentApiary, setActiveList} ) => {
             <div className="hiveContainer">
                 <h1>{apiary.name}</h1>
                 <small>{apiary.location}</small>
-                    <HiveProvider>
-                        <HiveList currentApiary={currentApiary} setActiveList={setActiveList}/>
-                    </HiveProvider>
+                    <HiveTypeProvider>
+                        <BeeTypeProvider>
+                            <HiveProvider>
+                                <HiveList currentApiary={currentApiary} setActiveList={setActiveList}/>
+                            </HiveProvider>
+                        </BeeTypeProvider>
+                    </HiveTypeProvider>
             </div>
     )
 }

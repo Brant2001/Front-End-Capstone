@@ -7,7 +7,7 @@ import React, { useContext, useState } from "react"
 import { HiveContext } from "./HiveProvider"
 import { Modal, ModalBody, ModalHeader, Button} from "reactstrap"
 import { Hive } from "./Hive"
-// import HiveForm from "./HiveForm"
+import { HiveForm } from "./HiveForm"
 import "./Hive.css"
 
 /* 
@@ -42,7 +42,7 @@ export const HiveList = ( { currentApiary, setActiveList } ) => {
                     Add Hive
                 </ModalHeader>
                 <ModalBody>
-                    {/* <HiveForm toggler={toggle}/> */}
+                    <HiveForm toggler={toggle} currentApiary={currentApiary}/>
                 </ModalBody>
             </Modal>
         </>

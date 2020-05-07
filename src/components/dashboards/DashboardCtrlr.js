@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { ApiaryDashboard } from "./ApiaryDashboard"
-import { Dashboard } from "./Dashboard"
 import { ApiaryProvider } from "../apiaries/ApiaryProvider"
+import { HiveDashboard } from "./HiveDashboard"
+import { HiveProvider } from "../hives/HiveProvider"
+import { LogDashboard } from "./LogDashboard"
 import "../App.css"
 
 export const DashboardCtrlr = () => {
@@ -13,13 +15,19 @@ export const DashboardCtrlr = () => {
 
     // Components needed to display Apiaries
     const showHomePage = () => (
-            <Dashboard setActiveList={setActiveList} />
+            <ApiaryDashboard setActiveList={setActiveList} />
     )
-    // Components needed to display Apiaries
-    const showApiaries = () => (
+    // Components needed to display Hives
+    const showHives = () => (
         <ApiaryProvider>
-            <ApiaryDashboard currentApiary={activeList.currentApiary} />
+            <HiveDashboard currentApiary={activeList.currentApiary} setActiveList={setActiveList}/>
         </ApiaryProvider>
+    )
+    // Components needed to display Logs
+    const showLogs = () => (
+        <HiveProvider>
+            <LogDashboard currentHive={activeList.currentHive} />
+        </HiveProvider>
     )
 
     /*
@@ -30,8 +38,11 @@ export const DashboardCtrlr = () => {
         if (activeList.list === "homePage") {
             setComponents(showHomePage)
         } 
-        else if  (activeList.list === "apiaries") {
-            setComponents(showApiaries)
+        else if  (activeList.list === "hives") {
+            setComponents(showHives)
+        }
+        else if  (activeList.list === "logs") {
+            setComponents(showLogs)
         }
     }, [activeList])
 

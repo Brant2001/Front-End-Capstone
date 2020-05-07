@@ -27,10 +27,7 @@ export const ApiaryList = ( { setActiveList } ) => {
             <div className="apiaries">
                 {
                     matchingUserApiaries.map(api => {
-                        
-                        
-                        return <Apiary setActiveList={setActiveList} key={api.id} apiary={api}
-                            user={matchingUserApiaries}/>
+                        return <Apiary setActiveList={setActiveList} key={api.id} apiary={api}/>
                     })
                 }
             </div>

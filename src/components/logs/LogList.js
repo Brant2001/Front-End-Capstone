@@ -30,10 +30,7 @@ export const LogList = ( { currentHive } ) => {
             <div className="logs">
                 {
                     hiveLogs.map(lg => {
-                        
-                        
-                        return <Log key={lg.id} log={lg}
-                            user={hiveLogs}/>
+                        return <Log currentHive={currentHive} key={lg.id} log={lg}/>
                     })
                 }
             </div>

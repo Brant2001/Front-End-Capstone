@@ -17,7 +17,7 @@ export const Apiary = ({ apiary, setActiveList }) => {
             <Button color="outline-secondary" size="lg" block
                 onClick={() => {
                     setActiveList({
-                        list: "apiaries",
+                        list: "hives",
                         currentApiary: apiary,
                     })
                 }}

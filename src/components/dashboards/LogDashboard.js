@@ -9,10 +9,15 @@ export const LogDashboard = ( { currentHive } ) => {
     return (
             <div className="logContainer">
                 <h1>{hive.name}</h1>
-                <small>{hive.location}</small>
-                    <LogProvider>
-                        <LogList currentHive={currentHive}/>
-                    </LogProvider>
+                <div className="hiveInfo">
+                    <p>{hive.apiaryId}</p>
+                    <p>{hive.hiveTypeId}</p>
+                    <p>{hive.beeTypeId}</p>
+                    <p>{hive.queenAge}</p>
+                </div>
+                <LogProvider>
+                    <LogList currentHive={currentHive}/>
+                </LogProvider>
             </div>
     )
 }

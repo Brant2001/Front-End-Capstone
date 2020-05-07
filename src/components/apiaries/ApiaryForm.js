@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from "react"
 import { ApiaryContext } from "./ApiaryProvider"
 
-export default props => {
+export const ApiaryForm = ( props ) => {
     const { addApiary } = useContext(ApiaryContext)
 
     const name = useRef()

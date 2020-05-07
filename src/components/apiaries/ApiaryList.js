@@ -7,7 +7,7 @@ import React, { useContext, useState } from "react"
 import { ApiaryContext } from "./ApiaryProvider"
 import { Modal, ModalBody, ModalHeader, Button} from "reactstrap"
 import { Apiary } from "./Apiary"
-import ApiaryForm from "./ApiaryForm"
+import { ApiaryForm } from "./ApiaryForm"
 import "./Apiary.css"
 
 // This function declares variables and uses them to map through the apiaries and find the ones that 

@@ -5,8 +5,7 @@ import "./auth.css"
 export const Login = (props) => {
     const email = useRef()
     const password = useRef()
-    const userName = useRef()
-    const address = useRef()
+
 
     const existingUserCheck = () => {
         return fetch(`http://localhost:8088/users?email=${email.current.value}`)

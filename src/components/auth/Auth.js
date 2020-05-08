@@ -20,8 +20,3 @@ const [showRegister, setShowRegister] = useState(false)
         </>
     )
 }
-
-/* <div className="authContainer">
-    <Login toggle={toggle} />
-    <Register toggle={toggle} />
-</div> */

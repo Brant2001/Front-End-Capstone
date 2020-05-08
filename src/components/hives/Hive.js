@@ -13,22 +13,22 @@ export const Hive = ( { hive, setActiveList } ) => {
     const { deleteHive } = useContext(HiveContext)
     
     return (
-        <Button color="outline-secondary" size="lg" block 
-        onClick={() => {
-            setActiveList({
-                list: "logs",
-                currentHive: hive,
-            })
-        }}>
-            <section className="hive">
+        <section className="hive">
+            <Button color="outline-secondary" size="lg" block 
+            onClick={() => {
+                setActiveList({
+                    list: "logs",
+                    currentHive: hive,
+                })
+            }}>
                 <h3 className="hive__name">{hive.name}</h3>
                 <div className="hive__bee">Type of Bee: {hive.beeTypeId}</div>
                 <div className="hive__type">Type of Hive: {hive.hiveTypeId}</div>
                 <div className="hive__queen">Age of Queen: {hive.queenAge}</div>
-                <Button color="danger" onClick={() => {
-                    deleteHive(hive.id)
-                }}>Delete</Button>
-            </section>
-        </Button>
+            </Button>
+            <Button color="danger" onClick={() => {
+                deleteHive(hive.id)
+            }}>Delete</Button>
+        </section>
     )
 }

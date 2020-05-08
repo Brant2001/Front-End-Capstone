@@ -6,6 +6,7 @@ import "../App.css"
 
 export const LogDashboard = ( { currentHive } ) => {
     const hive = currentHive
+    
     return (
             <div className="logContainer">
                 <h1>{hive.name}</h1>

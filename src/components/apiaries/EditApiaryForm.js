@@ -2,8 +2,8 @@ import React, { useContext, useState, useRef } from "react"
 import { ApiaryContext } from "./ApiaryProvider"
 
 
-export const EditApiaryForm = ({ apiary, customer, toggleEdit }) => {
-    const { updateApiary } = useContext(ApiaryContext)
+export const EditApiaryForm = ({ apiary, user, toggleEdit }) => {
+    const { editApiary } = useContext(ApiaryContext)
 
     // Separate state variable to track the apiary as it is edited
     const [ updatedApiary, setApiary ] = useState(apiary)
@@ -19,16 +19,16 @@ export const EditApiaryForm = ({ apiary, customer, toggleEdit }) => {
     }
     const location = useRef()
 
-    const editApiary = () => {
+    const updateApiary = () => {
 
         if (location === "") {
             window.alert("Please select a location")
         } else {
-            updateApiary({
+            editApiary({
                 id: updatedApiary.id,
                 name: updatedApiary.name,
-                location: location.current.value,
-                customerId: parseInt(localStorage.getItem("kennel_customer"))
+                location: updatedApiary.location,
+                userId: parseInt(localStorage.getItem("hiveLogger_user"))
             })
                 .then(toggleEdit)
         }
@@ -59,7 +59,7 @@ export const EditApiaryForm = ({ apiary, customer, toggleEdit }) => {
             <button type="submit" className="btn btn-primary"
                 onClick={evt => {
                     evt.preventDefault()
-                    editApiary()
+                    updateApiary()
                 }}>
                 Save Updates
             </button>

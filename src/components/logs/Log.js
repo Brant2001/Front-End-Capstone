@@ -13,13 +13,17 @@ export const Log = ( { log } ) => {
     const { deleteLog } = useContext(LogContext)
     
     return (
-        <Button color="outline-secondary" size="sm" block>
-            <section className="log">
-                <h3 className="log__name">{log.date} Log</h3>
-                <Button color="danger" onClick={() => {
-                    deleteLog(log.id)
-                }}>Delete</Button>
-            </section>
-        </Button>
+        <section className="log">
+            <Button color="outline-secondary" size="sm" block>
+                <h3 className="log__date">{log.date} Log</h3>
+                <div className="log__time">Time: {log.time}</div>
+                <div className="log__weather">Weather: {log.weather}</div>
+                <div className="log__type">Type of Inspection: {log.insTypeId}</div>
+                <div className="log__notes">Notes: {log.notes}</div>
+            </Button>
+            <Button color="danger" onClick={() => {
+                deleteLog(log.id)
+            }}>Delete</Button>
+        </section>
     )
 }

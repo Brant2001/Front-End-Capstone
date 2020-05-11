@@ -7,7 +7,7 @@ import React, { useContext, useState } from "react"
 import { LogContext } from "./LogProvider"
 import { Modal, ModalBody, ModalHeader, Button} from "reactstrap"
 import { Log } from "./Log"
-// import LogForm from "./LogForm"
+import { LogForm } from "./LogForm"
 import "./Log.css"
 
 /* 
@@ -42,7 +42,7 @@ export const LogList = ( { currentHive } ) => {
                     Add Log
                 </ModalHeader>
                 <ModalBody>
-                    {/* <LogForm toggler={toggle}/> */}
+                    <LogForm toggler={toggle} currentHive={currentHive}/>
                 </ModalBody>
             </Modal>
         </>

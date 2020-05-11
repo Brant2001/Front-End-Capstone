@@ -2,6 +2,7 @@ import React from "react"
 import { LogProvider } from "../logs/LogProvider"
 import { LogList } from "../logs/LogList"
 import "../App.css"
+import { InsTypeProvider } from "../types/InsTypesProvider"
 
 
 export const LogDashboard = ( { currentHive } ) => {
@@ -16,9 +17,11 @@ export const LogDashboard = ( { currentHive } ) => {
                     <p>{hive.beeTypeId}</p>
                     <p>{hive.queenAge}</p>
                 </div>
-                <LogProvider>
-                    <LogList currentHive={currentHive}/>
-                </LogProvider>
+                <InsTypeProvider>
+                    <LogProvider>
+                        <LogList currentHive={currentHive}/>
+                    </LogProvider>
+                </InsTypeProvider>
             </div>
     )
 }

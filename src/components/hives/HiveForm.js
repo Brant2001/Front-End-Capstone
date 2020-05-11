@@ -108,7 +108,7 @@ export const HiveForm = ( { toggler, currentApiary} ) => {
                     }
                 }
                 className="btn btn-primary">
-                Create Apiary
+                Create Hive
             </button>
         </form>
     )

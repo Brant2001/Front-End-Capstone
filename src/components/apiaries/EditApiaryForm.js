@@ -2,7 +2,7 @@ import React, { useContext, useState, useRef } from "react"
 import { ApiaryContext } from "./ApiaryProvider"
 
 
-export const EditApiaryForm = ({ apiary, user, toggleEdit }) => {
+export const EditApiaryForm = ({ apiary, toggleEdit }) => {
     const { editApiary } = useContext(ApiaryContext)
 
     // Separate state variable to track the apiary as it is edited

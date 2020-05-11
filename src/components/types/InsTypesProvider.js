@@ -32,7 +32,7 @@ export const InsTypeProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log("****  InsTYPE APPLICATION STATE CHANGED  ****")
+        console.log("****  INSTYPE APPLICATION STATE CHANGED  ****")
     }, [insTypes])
 
     return (

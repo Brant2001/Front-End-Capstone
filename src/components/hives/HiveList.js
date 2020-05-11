@@ -30,7 +30,7 @@ export const HiveList = ( { currentApiary, setActiveList } ) => {
             <div className="hives">
                 {
                     apiaryHives.map(hv => {
-                        return <Hive setActiveList={setActiveList} key={hv.id} hive={hv}/>
+                        return <Hive setActiveList={setActiveList} currentApiary={currentApiary} key={hv.id} hive={hv}/>
                     })
                 }
             </div>

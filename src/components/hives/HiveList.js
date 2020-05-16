@@ -9,6 +9,8 @@ import { Modal, ModalBody, ModalHeader, Button} from "reactstrap"
 import { Hive } from "./Hive"
 import { HiveForm } from "./HiveForm"
 import "./Hive.css"
+import { BeeTypeContext } from "../types/BeeTypeProvider"
+import { HiveTypeContext } from "../types/HiveTypeProvider"
 
 /* 
     This function declares variables and uses them to map 
@@ -17,8 +19,10 @@ import "./Hive.css"
 */
 export const HiveList = ( { currentApiary, setActiveList } ) => {
     const { hives } = useContext(HiveContext)
+    const { beeTypes } = useContext(BeeTypeContext)
+    const { hiveTypes } = useContext(HiveTypeContext)
     const apiary = currentApiary
-
+    
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
 
@@ -30,7 +34,14 @@ export const HiveList = ( { currentApiary, setActiveList } ) => {
             <div className="hives">
                 {
                     apiaryHives.map(hv => {
-                        return <Hive setActiveList={setActiveList} currentApiary={currentApiary} key={hv.id} hive={hv}/>
+                        const matchingBeeType = beeTypes.find(beeT => beeT.id === hv.beeTypeId)
+                        const matchingHiveType = hiveTypes.find(hiTy => hiTy.id === hv.hiveTypeId)
+                        console.log(matchingBeeType)
+                        return <Hive hive={hv} key={hv.id} 
+                                setActiveList={setActiveList} 
+                                currentApiary={currentApiary} 
+                                beeType={matchingBeeType}
+                                hiveType={matchingHiveType} />
                     })
                 }
             </div>

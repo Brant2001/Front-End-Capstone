@@ -22,8 +22,10 @@ export const ApiaryList = ( { setActiveList } ) => {
 
     return (
         <>
-            <h2>Apiaries</h2>
-
+            <div className="flexHead">
+                <h2>Apiaries</h2>
+                <Button className="addBtn" onClick={toggle}>＋</Button>
+            </div>
             <div className="apiaries">
                 {
                     matchingUserApiaries.map(api => {
@@ -32,7 +34,7 @@ export const ApiaryList = ( { setActiveList } ) => {
                 }
             </div>
 
-            <Button onClick={toggle}>Add Apiary</Button>
+            
 
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>

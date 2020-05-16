@@ -10,13 +10,14 @@ import { EditHiveForm } from "./EditHiveForm"
 
 // This function will allow HiveList to pass hive data 
 // through it to create HTML/JSX representations of a hive
-export const Hive = ( { hive, setActiveList, currentApiary } ) => {
+export const Hive = ( { hive, setActiveList, currentApiary, beeType, hiveType } ) => {
     const { deleteHive } = useContext(HiveContext)
     
      // Toggle edit modal
-     const [editModal, setEditModal] = useState(false)
-     const toggleEdit = () => setEditModal(!editModal)
-
+    const [editModal, setEditModal] = useState(false)
+    const toggleEdit = () => setEditModal(!editModal)
+    console.log(beeType)
+    console.log(hiveType)
     return (
         <section className="hive">
             <Button color="outline-secondary" size="lg" block 
@@ -27,9 +28,10 @@ export const Hive = ( { hive, setActiveList, currentApiary } ) => {
                 })
             }}>
                 <h3 className="hive__name">{hive.name}</h3>
-                <div className="hive__bee">Type of Bee: {hive.beeTypeId}</div>
-                <div className="hive__type">Type of Hive: {hive.hiveTypeId}</div>
+                <div className="hive__bee">Type of Bee: {beeType}</div>
+                <div className="hive__type">Type of Hive: {hiveType}</div>
                 <div className="hive__queen">Age of Queen: {hive.queenAge}</div>
+                
             </Button>
             <Button size="sm" color="danger" onClick={() => {
                 deleteHive(hive.id)
@@ -48,5 +50,5 @@ export const Hive = ( { hive, setActiveList, currentApiary } ) => {
                 </ModalBody>
             </Modal>
         </section>
-    )
+    ) 
 }

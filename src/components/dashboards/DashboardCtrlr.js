@@ -20,13 +20,13 @@ export const DashboardCtrlr = () => {
     // Components needed to display Hives
     const showHives = () => (
         <ApiaryProvider>
-            <HiveDashboard currentApiary={activeList.currentApiary} setActiveList={setActiveList}/>
+            <HiveDashboard currentApiary={activeList.currentApiary} setActiveList={setActiveList} />
         </ApiaryProvider>
     )
     // Components needed to display Logs
     const showLogs = () => (
         <HiveProvider>
-            <LogDashboard currentHive={activeList.currentHive} />
+            <LogDashboard currentHive={activeList.currentHive} currentApiary={activeList.currentApiary} setActiveList={setActiveList} />
         </HiveProvider>
     )
 

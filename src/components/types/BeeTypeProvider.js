@@ -9,6 +9,7 @@ import React, { useState, useEffect } from "react"
     The context is imported and used by individual components
     that need data
 */
+
 export const BeeTypeContext = React.createContext()
 
 /*
@@ -21,8 +22,8 @@ export const BeeTypeProvider = (props) => {
         return fetch("http://localhost:8088/beeTypes")
             .then(res => res.json())
             .then(setBeeTypes)
+            
     }
-
     /*
         Load all beeTypes when the component is mounted. Ensure that
         an empty array is the second argument to avoid infinite loop.

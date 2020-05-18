@@ -9,6 +9,7 @@ import React, { useState, useEffect } from "react"
     The context is imported and used by individual components
     that need data
 */
+
 export const HiveTypeContext = React.createContext()
 
 /*

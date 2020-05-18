@@ -20,7 +20,7 @@ export const Apiary = ({ apiary, setActiveList }) => {
 
     return (
         <section className="apiary">
-            <Button color="outline-secondary" size="lg" block
+            <Button className="apiaryBtn" color="outline-secondary" size="lg" block
                 onClick={() => {
                     setActiveList({
                         list: "hives",

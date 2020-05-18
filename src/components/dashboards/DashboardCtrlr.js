@@ -1,10 +1,17 @@
-import React, { useState, useEffect } from "react"
+/*
+    This module is responsible for determining what dashboard to 
+    render based on conditions given in child components
+*/
+
+import React, { useState, useEffect, useContext } from "react"
 import { ApiaryDashboard } from "./ApiaryDashboard"
 import { ApiaryProvider } from "../apiaries/ApiaryProvider"
 import { HiveDashboard } from "./HiveDashboard"
 import { HiveProvider } from "../hives/HiveProvider"
 import { LogDashboard } from "./LogDashboard"
+import { InsTypeContext } from "../types/InsTypesProvider"
 import "../App.css"
+
 
 export const DashboardCtrlr = () => {
     const [activeList, setActiveList] = useState({
@@ -13,10 +20,11 @@ export const DashboardCtrlr = () => {
     })
     
     const [components, setComponents] = useState()
+    
 
     // Components needed to display Apiaries
     const showHomePage = () => (
-            <ApiaryDashboard setActiveList={setActiveList} />
+        <ApiaryDashboard setActiveList={setActiveList} />
     )
     // Components needed to display Hives
     const showHives = () => (

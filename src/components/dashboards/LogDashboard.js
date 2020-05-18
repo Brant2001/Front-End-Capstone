@@ -21,9 +21,9 @@ export const LogDashboard = ( { currentHive, currentApiary, setActiveList } ) =>
                 }}>⇦</Button>
                 <h1>{hive.name}</h1>
                 <div className="hiveInfo">
-                    <p>{hive.apiaryId}</p>
-                    <p>{hive.hiveTypeId}</p>
-                    <p>{hive.beeTypeId}</p>
+                    <p>{hive.apiary.name}</p>
+                    <p>{hive.hiveType.type}</p>
+                    <p>{hive.beeType.type}</p>
                     <p>{hive.queenAge}</p>
                 </div>
                 <InsTypeProvider>

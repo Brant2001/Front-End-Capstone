@@ -11,6 +11,7 @@ export const DashboardCtrlr = () => {
         list: "homePage",
         currentApiary: {}
     })
+    
     const [components, setComponents] = useState()
 
     // Components needed to display Apiaries

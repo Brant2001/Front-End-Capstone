@@ -9,14 +9,14 @@ import { Button } from "reactstrap"
 
 export const HiveDashboard = ( { currentApiary, setActiveList} ) => {
     const apiary = currentApiary
-
+    
     return (
             <div className="hiveContainer">
                 <Button
                 onClick={() => {
                 setActiveList({
                     list: "homePage",
-                    currentApiary: {},
+                    currentApiary: apiary,
                 })
                 }}>⇦</Button>
 

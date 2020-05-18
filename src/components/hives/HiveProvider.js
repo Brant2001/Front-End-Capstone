@@ -18,7 +18,7 @@ export const HiveProvider = (props) => {
     const [hives, setHives] = useState([])
 
     const getHives = () => {
-        return fetch("http://localhost:8088/hives")
+        return fetch("http://localhost:8088/hives?_expand=apiary&_expand=beeType&_expand=hiveType")
             .then(res => res.json())
             .then(setHives)
     }

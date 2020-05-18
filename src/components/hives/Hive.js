@@ -14,8 +14,8 @@ export const Hive = ( { hive, setActiveList, currentApiary } ) => {
     const { deleteHive } = useContext(HiveContext)
     
      // Toggle edit modal
-     const [editModal, setEditModal] = useState(false)
-     const toggleEdit = () => setEditModal(!editModal)
+    const [editModal, setEditModal] = useState(false)
+    const toggleEdit = () => setEditModal(!editModal)
 
     return (
         <section className="hive">
@@ -27,9 +27,10 @@ export const Hive = ( { hive, setActiveList, currentApiary } ) => {
                 })
             }}>
                 <h3 className="hive__name">{hive.name}</h3>
-                <div className="hive__bee">Type of Bee: {hive.beeTypeId}</div>
-                <div className="hive__type">Type of Hive: {hive.hiveTypeId}</div>
+                <div className="hive__bee">Type of Bee: {hive.beeType.type}</div>
+                <div className="hive__type">Type of Hive: {hive.hiveType.type}</div>
                 <div className="hive__queen">Age of Queen: {hive.queenAge}</div>
+                
             </Button>
             <Button size="sm" color="danger" onClick={() => {
                 deleteHive(hive.id)
@@ -48,5 +49,5 @@ export const Hive = ( { hive, setActiveList, currentApiary } ) => {
                 </ModalBody>
             </Modal>
         </section>
-    )
+    ) 
 }

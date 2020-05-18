@@ -1,5 +1,16 @@
 .mainContainer {
     text-align: center;
-    height: 100vh;
+    background-color: rgb(255, 208, 0);
+    height: 100vh;   
+}
 
+.mainpage_header {
+    display: flex;
+    justify-content: space-around;
+    padding-top: .5rem
+}
+
+.logo {
+    max-width: 50px;
+    max-height: 50px;
 }

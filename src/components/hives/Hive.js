@@ -12,7 +12,8 @@ import { EditHiveForm } from "./EditHiveForm"
 // through it to create HTML/JSX representations of a hive
 export const Hive = ( { hive, setActiveList, currentApiary } ) => {
     const { deleteHive } = useContext(HiveContext)
-    
+    const apiary = currentApiary
+
      // Toggle edit modal
     const [editModal, setEditModal] = useState(false)
     const toggleEdit = () => setEditModal(!editModal)
@@ -23,6 +24,7 @@ export const Hive = ( { hive, setActiveList, currentApiary } ) => {
             onClick={() => {
                 setActiveList({
                     list: "logs",
+                    currentApiary: apiary,
                     currentHive: hive,
                 })
             }}>

@@ -1,15 +1,24 @@
 import React from "react"
 import { LogProvider } from "../logs/LogProvider"
 import { LogList } from "../logs/LogList"
-import "../App.css"
 import { InsTypeProvider } from "../types/InsTypesProvider"
+import { Button } from "reactstrap"
+import "../App.css"
 
 
-export const LogDashboard = ( { currentHive } ) => {
+export const LogDashboard = ( { currentHive, currentApiary, setActiveList } ) => {
     const hive = currentHive
+    const apiary = currentApiary
     
     return (
             <div className="logContainer">
+                <Button color="outline-secondary" 
+                onClick={() => {
+                setActiveList({
+                    list: "hives",
+                    currentApiary: apiary,
+                })
+                }}>⇦</Button>
                 <h1>{hive.name}</h1>
                 <div className="hiveInfo">
                     <p>{hive.apiary.name}</p>

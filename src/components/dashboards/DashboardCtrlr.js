@@ -18,9 +18,9 @@ export const DashboardCtrlr = () => {
         list: "homePage",
         currentApiary: {}
     })
+    
     const [components, setComponents] = useState()
     
-    const insTypes = useContext(InsTypeContext)
 
     // Components needed to display Apiaries
     const showHomePage = () => (
@@ -35,7 +35,7 @@ export const DashboardCtrlr = () => {
     // Components needed to display Logs
     const showLogs = () => (
         <HiveProvider>
-            <LogDashboard currentHive={activeList.currentHive} insTypes={insTypes} />
+            <LogDashboard currentHive={activeList.currentHive} currentApiary={activeList.currentApiary} setActiveList={setActiveList} />
         </HiveProvider>
     )
 

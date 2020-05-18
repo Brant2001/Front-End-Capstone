@@ -1,11 +1,7 @@
 .mainContainer {
     text-align: center;
     background-color: rgb(255, 208, 0);
-    height: 100%;
-    max-height: 100%;
-    min-height: 100%;
-}
-
-.listDisplay {
+    height: 100vh;
     
 }
+

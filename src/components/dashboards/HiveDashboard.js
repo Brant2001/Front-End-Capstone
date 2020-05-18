@@ -12,15 +12,22 @@ export const HiveDashboard = ( { currentApiary, setActiveList } ) => {
     
     return (
             <div className="hiveContainer">
-                <Button
-                onClick={() => {
-                setActiveList({
-                    list: "homePage",
-                    currentApiary: apiary,
-                })
-                }}>⇦</Button>
-
-                <h1>{apiary.name}</h1>
+                <div className="hiveHeader">
+                    <Button
+                    onClick={() => {
+                        setActiveList({
+                            list: "homePage",
+                            currentApiary: apiary,
+                        })
+                    }}>⇦</Button>
+                    <h1>{apiary.name}</h1>
+                    <Button size="sm"
+                        onClick={() => {
+                            localStorage.removeItem("hiveLogger_user");
+                            window.location.reload();
+                        }}>Logout
+                    </Button>
+                </div>
                 <small>{apiary.location}</small>
                     <HiveTypeProvider>
                         <BeeTypeProvider>

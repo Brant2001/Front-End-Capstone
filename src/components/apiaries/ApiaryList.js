@@ -22,7 +22,7 @@ export const ApiaryList = ( { setActiveList } ) => {
 
     return (
         <>
-            <div className="flexHead">
+            <div className="listHead">
                 <h2>Apiaries</h2>
                 <Button className="addBtn" onClick={toggle}>＋</Button>
             </div>

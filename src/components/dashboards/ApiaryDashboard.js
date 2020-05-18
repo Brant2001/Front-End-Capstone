@@ -2,8 +2,8 @@ import React from "react"
 import { ApiaryProvider } from "../apiaries/ApiaryProvider"
 import { ApiaryList } from "../apiaries/ApiaryList"
 import { UserProvider } from "../users/UserProvider"
-import "../App.css"
 import { Button } from "reactstrap"
+import "../App.css"
 
 export const ApiaryDashboard = ( { setActiveList, beeTypes, hiveTypes } ) => {
     return (    

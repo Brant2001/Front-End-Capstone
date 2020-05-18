@@ -1,39 +1,19 @@
 .apiary {
-    border: 1px solid #9c9c9c;
     margin: 10px 20px;
     text-align: center;
     padding: 20px;
     border-radius: 6px;
-    background: whitesmoke;
-    border: none;
-}
-
-.apiary:hover {
-    background: rgb(224, 224, 224);
-}
-
-.flexHead {
-    display: flex;
-    justify-content: space-between;
-    margin: 0px 20px;
+    border: 1px solid rgb(79,51,27);
+    background: #FCB43A;
 }
 
 .apiaryHeader {
-    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-around;
+    padding-top: .5rem
 }
 
 .apiaryBtn {
     margin-bottom: 1rem;
     border: none !important;
-}
-
-button.addBtn {
-    padding: 0.3rem 0.7rem;
-    background: #969696;
-    border: none;
-    font-size: 1.3rem;
-}
-
-button.addBtn:hover {
-    background: #707070;
 }

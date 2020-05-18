@@ -32,14 +32,15 @@ export const Apiary = ({ apiary, setActiveList }) => {
             <div className="apiary__loc">Location: {apiary.location}</div>
             </Button>
 
-            <Button size="sm" color="danger"
+            <Button className="deleteBtn" size="sm"
                 onClick={() => {
                     deleteApiary(apiary.id)
                 }}
             >Delete</Button>
 
-            <Button size="sm" color="warning" onClick={() => {
-                toggleEdit()
+            <Button className="editBtn" size="sm"  
+                onClick={() => {
+                    toggleEdit()
             }}>Edit🖊</Button>
 
             <Modal isOpen={editModal} toggle={toggleEdit}>

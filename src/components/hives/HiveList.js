@@ -29,8 +29,10 @@ export const HiveList = ( { currentApiary, setActiveList } ) => {
     const apiaryHives = hives.filter(hive => apiary.id === hive.apiaryId)
     return (
         <>
-            <h2>Hives</h2>
-
+            <div className="listHead">
+                <h2>Hives</h2>
+                <Button className="addBtn" onClick={toggle}>＋</Button>
+            </div>
             <div className="hives">
                 {
                     apiaryHives.map(hv => {
@@ -46,7 +48,7 @@ export const HiveList = ( { currentApiary, setActiveList } ) => {
                 }
             </div>
             {/* This function also provides an add button that will open a hive form */}
-            <Button onClick={toggle}>Add Hive</Button>
+            
 
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>

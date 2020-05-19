@@ -7,6 +7,7 @@ import React, { useContext, useState } from "react"
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
 import { HiveContext } from "./HiveProvider"
 import { EditHiveForm } from "./EditHiveForm"
+import "../App.css"
 
 // This function will allow HiveList to pass hive data 
 // through it to create HTML/JSX representations of a hive
@@ -20,7 +21,7 @@ export const Hive = ( { hive, setActiveList, currentApiary } ) => {
 
     return (
         <section className="hive">
-            <Button color="outline-secondary" size="lg" block 
+            <Button className="listBtn" color="outline-secondary" size="lg" block 
             onClick={() => {
                 setActiveList({
                     list: "logs",
@@ -34,13 +35,17 @@ export const Hive = ( { hive, setActiveList, currentApiary } ) => {
                 <div className="hive__queen">Age of Queen: {hive.queenAge}</div>
                 
             </Button>
-            <Button size="sm" color="danger" onClick={() => {
-                deleteHive(hive.id)
-            }}>Delete</Button>
-            
-            <Button size="sm" color="warning" onClick={() => {
-                toggleEdit()
-            }}>Edit🖊</Button>
+            <Button className="deleteBtn" size="sm"
+                onClick={() => {
+                    deleteHive(hive.id)
+                }}
+            >Delete</Button>
+
+            <Button className="editBtn" size="sm"  
+                onClick={() => {
+                    toggleEdit()
+                }}
+            >Edit</Button>
 
             <Modal isOpen={editModal} toggle={toggleEdit}>
                 <ModalHeader toggle={toggleEdit}>

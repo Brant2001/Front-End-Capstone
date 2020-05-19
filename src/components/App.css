@@ -1,17 +1,55 @@
+@import "./apiaries/Apiary.css";
+@import "./hives/Hive.css";
+@import "./logs/Log.css";
+
 .mainContainer {
     text-align: center;
-    background-color: rgb(238,186,25);
+    background-color: #F3C622;
     height: 100vh;   
-}
-
-.apiaryHeader {
-    display: flex;
-    justify-content: space-around;
-    padding-top: .5rem
 }
 
 .logo {
     margin-top: 1rem;
     max-width: 75px;
     max-height: 40px;
+}
+
+button.addBtn {
+    padding: 0.3rem 0.7rem;
+    background: #FCB43A;
+    color: #23212C;
+    border-color: #23212C;
+    font-size: 1.3rem;
+}
+
+.listHead {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 20px;
+}
+
+.deleteBtn {
+    background: #992409 !important;    
+    margin-right: 1rem;
+    
+}
+
+button.editBtn {
+    background: #FCD615;
+    margin-left: 1rem;
+    color: #3A3637;
+}
+
+
+.listBtn {
+    margin-bottom: 1rem;
+    border: none !important;
+}
+
+button.logoutBtn {
+    background: #4f331b;
+}
+
+button.backBtn {
+    background: #ac6400
 }

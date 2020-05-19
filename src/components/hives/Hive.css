@@ -1,6 +1,19 @@
 .hive {
-    border: 1px solid black;
-    margin: 10px 20px 10px 20px;
+    margin: 10px 20px;
     text-align: center;
     padding: 20px;
+    border-radius: 6px;
+    border: 1px solid rgb(79,51,27);
+    background: #FCB43A;
+}
+
+.hiveHeader {
+    display: flex;
+    justify-content: space-around;
+    padding-top: .5rem
+}
+
+.hiveBtn {
+    margin-bottom: 1rem;
+    border: none !important;
 }

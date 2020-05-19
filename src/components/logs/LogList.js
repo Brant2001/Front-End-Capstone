@@ -24,9 +24,11 @@ export const LogList = ( { currentHive } ) => {
 
     const hiveLogs = logs.filter(log => hive.id === log.hiveId)
     return (
-        <>
-            <h2>Logs</h2>
-
+        <>  
+            <div className="listHead">
+                <h2>Logs</h2>
+                <Button className="addBtn" onClick={toggle}>＋</Button>
+            </div>
             <div className="logs">
                 {
                     hiveLogs.map(lg => {
@@ -35,7 +37,7 @@ export const LogList = ( { currentHive } ) => {
                 }
             </div>
             {/* This function also provides an add button that will open a log form */}
-            <Button onClick={toggle}>Add Log</Button>
+            
 
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>

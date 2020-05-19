@@ -12,19 +12,28 @@ export const LogDashboard = ( { currentHive, currentApiary, setActiveList } ) =>
     
     return (
             <div className="logContainer">
-                <Button color="outline-secondary" 
-                onClick={() => {
-                setActiveList({
-                    list: "hives",
-                    currentApiary: apiary,
-                })
-                }}>⇦</Button>
-                <h1>{hive.name}</h1>
+                <div className="logHeader">
+                    <Button className="backBtn" 
+                    onClick={() => {
+                    setActiveList({
+                        list: "hives",
+                        currentApiary: apiary,
+                    })
+                    }}>⇦</Button>
+                    <h1>{hive.name}</h1>
+                    <Button className="logoutBtn" size="sm"
+                        onClick={() => {
+                            localStorage.removeItem("hiveLogger_user");
+                            window.location.reload();
+                        }}>Logout
+                    </Button>
+                </div>
+
                 <div className="hiveInfo">
-                    <p>{hive.apiary.name}</p>
-                    <p>{hive.hiveType.type}</p>
-                    <p>{hive.beeType.type}</p>
-                    <p>{hive.queenAge}</p>
+                    <p>Apiary: {hive.apiary.name}</p>
+                    <p>Type of Hive: {hive.hiveType.type}</p>
+                    <p>Type of Bee: {hive.beeType.type}</p>
+                    <p>Age of Queen: {hive.queenAge}</p>
                 </div>
                 <InsTypeProvider>
                     <LogProvider>

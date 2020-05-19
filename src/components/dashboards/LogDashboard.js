@@ -13,7 +13,7 @@ export const LogDashboard = ( { currentHive, currentApiary, setActiveList } ) =>
     return (
             <div className="logContainer">
                 <div className="logHeader">
-                    <Button color="outline-secondary" 
+                    <Button className="backBtn" 
                     onClick={() => {
                     setActiveList({
                         list: "hives",
@@ -21,7 +21,7 @@ export const LogDashboard = ( { currentHive, currentApiary, setActiveList } ) =>
                     })
                     }}>⇦</Button>
                     <h1>{hive.name}</h1>
-                    <Button size="sm"
+                    <Button className="logoutBtn" size="sm"
                         onClick={() => {
                             localStorage.removeItem("hiveLogger_user");
                             window.location.reload();

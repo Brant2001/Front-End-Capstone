@@ -18,7 +18,7 @@ export const LogProvider = (props) => {
     const [logs, setLogs] = useState([])
 
     const getLogs = () => {
-        return fetch("http://localhost:8088/logs")
+        return fetch("http://localhost:8088/logs?_expand=insType")
             .then(res => res.json())
             .then(setLogs)
     }

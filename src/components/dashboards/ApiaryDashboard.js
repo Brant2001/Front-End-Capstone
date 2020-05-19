@@ -11,7 +11,7 @@ export const ApiaryDashboard = ( { setActiveList, beeTypes, hiveTypes } ) => {
                 <div className="apiaryHeader">
                     <img className="logo" src="https://cdn.pixabay.com/photo/2012/04/11/17/56/bee-29162_1280.png" alt=""/>
                     <h1>HiveLogger</h1>
-                    <Button size="sm"
+                    <Button className="logoutBtn" size="sm"
                         onClick={() => {
                             localStorage.removeItem("hiveLogger_user");
                             window.location.reload();

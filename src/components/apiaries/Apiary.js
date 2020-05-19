@@ -7,6 +7,7 @@ import React, { useContext, useState } from "react"
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
 import { ApiaryContext } from "./ApiaryProvider"
 import { EditApiaryForm } from "./EditApiaryForm"
+import "../App.css"
 
 // This function will allow ApiaryList to pass apairy data
 // through it to create HTML/JSX representations of an apiary
@@ -20,7 +21,7 @@ export const Apiary = ({ apiary, setActiveList }) => {
 
     return (
         <section className="apiary">
-            <Button className="apiaryBtn" color="outline-secondary" size="lg" block
+            <Button className="listBtn" color="outline-secondary" size="lg" block
                 onClick={() => {
                     setActiveList({
                         list: "hives",
@@ -41,7 +42,8 @@ export const Apiary = ({ apiary, setActiveList }) => {
             <Button className="editBtn" size="sm"  
                 onClick={() => {
                     toggleEdit()
-            }}>Edit🖊</Button>
+                }}
+            >Edit</Button>
 
             <Modal isOpen={editModal} toggle={toggleEdit}>
                 <ModalHeader toggle={toggleEdit}>

@@ -27,7 +27,7 @@ export const LogList = ( { currentHive } ) => {
         <>  
             <div className="listHead">
                 <h2>Logs</h2>
-                <Button onClick={toggle}>Add Log</Button>
+                <Button className="addBtn" onClick={toggle}>＋</Button>
             </div>
             <div className="logs">
                 {

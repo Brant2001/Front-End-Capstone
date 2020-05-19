@@ -16,8 +16,9 @@
 
 button.addBtn {
     padding: 0.3rem 0.7rem;
-    background: #969696;
-    border: none;
+    background: #FCB43A;
+    color: #23212C;
+    border-color: #23212C;
     font-size: 1.3rem;
 }
 
@@ -25,4 +26,30 @@ button.addBtn {
     display: flex;
     justify-content: space-between;
     margin: 0px 20px;
+}
+
+.deleteBtn {
+    background: #992409 !important;    
+    margin-right: 1rem;
+    
+}
+
+button.editBtn {
+    background: #FCD615;
+    margin-left: 1rem;
+    color: #3A3637;
+}
+
+
+.listBtn {
+    margin-bottom: 1rem;
+    border: none !important;
+}
+
+button.logoutBtn {
+    background: #4f331b;
+}
+
+button.backBtn {
+    background: #ac6400
 }

@@ -31,7 +31,7 @@ export const HiveList = ( { currentApiary, setActiveList } ) => {
         <>
             <div className="listHead">
                 <h2>Hives</h2>
-                <Button onClick={toggle}>Add Hive</Button>
+                <Button className="addBtn" onClick={toggle}>＋</Button>
             </div>
             <div className="hives">
                 {

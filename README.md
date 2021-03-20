@@ -27,8 +27,8 @@ Hivelogger provides an easy and convenient way to store and organize records.
 2.
 3. 
 4. 
-5. Navigate into the client directory, copy the contents from the .env.local.example, put them into a new file called .env.local file, and replace the value with your Firebase project API Key.
-6. Open Visual Sudio and select "Open a project or solution". When the file explorer appears navigate to wherever you cloned this repository and open the file called 
+5.
+6.
 
 ### Setting up the DB (This can be done through Visual Studio)
 1. Connect to your SQL Server

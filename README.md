@@ -31,9 +31,9 @@ Hivelogger provides an easy and convenient way to store and organize records.
 6.
 
 ### Setting up the DB (This can be done through Visual Studio)
-1. Connect to your SQL Server
-2. Navigate to the SQL folder within the LetsGoal application. Run the contents of "Let'sGoal-SQL-script.sql" inside a new SQL query to create all the neccessary tables.
-3. Now do the same with the contents of "Let'sGoal-SQL-seed.sql". Everything from line 1-9 is required but everything below that is optional. If you choose to run the rest be sure to create three equivilent users in your firebase project and replace the firebase user ids in the seed file with the ones you just created.
+1.
+2.
+3.
 
 ### Install missing dependencies
 1. Navigate to the client folder in your terminal
